@@ -50,9 +50,9 @@ def main():
         for comment in comments:
             try:
                 like_button = comment.find_element(By.CSS_SELECTOR, "button[data-e2e='like-comment']")
-                # Only like if not already liked (you might need to check button state)
                 like_button.click()
-                time.sleep(1)
+                delay = random.choice([1, 2])
+                time.sleep(delay)
             except Exception:
                 continue
         
@@ -64,4 +64,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
